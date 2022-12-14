@@ -1,0 +1,210 @@
+body{
+    background: url(bokeh-background-skyscraper-buildings-downtown-city-lights-blurry-photo-night-time-illuminated-cityscape-bokeh-160005003.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.frame{
+    background-color: #424869;
+    height: 900px;
+    width: 1600px;
+
+    position: absolute;
+    display: inline-block;
+    top: 8%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    /* style ui & stuff*/
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #13131388;
+    border-radius: 5px;
+}
+
+.framerightside{
+    position: absolute;
+    top: 15%;
+    left: 55%;
+    display: grid;
+    grid-template-columns: 26% 26% 26% 26%;
+    grid-template-rows: 26% 26% 26% 26%;
+}
+
+.button{
+    width: 150px;
+    height: 150px;
+    background-color: #2a3047;
+    border-radius: 2px;
+    border-color: transparent;
+
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+}
+.color1{
+    background-color: #353d59;
+}
+.color3{
+    background-color: #6088c8;
+}
+
+.button:hover{
+    color: #353d59;
+    background-color: #ffffff;
+    transition: background-color 1.5s linear;
+}
+
+.button:active {
+    color: #353d59;
+    background-color: #ffffff;
+    transform: translateY(4px);
+}
+
+
+
+.frameleftside{
+    position: absolute;
+    top: 15%;
+    right: 50%;
+    display: grid;
+    grid-template-columns: 18% 18% 18%;
+    grid-template-rows: 15% 15% 15%;
+    width: 45%;
+    height: 67%;
+    background-color: white;
+    border-color: transparent;
+}
+
+.matrix1row1{
+    background-color: #2a3047;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.matrix1row2{
+    background-color: #2a3047;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.matrix1row3{
+    background-color: #2a3047;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.matrix1row1:hover{
+    background-color: #353d59;
+    transition: background-color .5s linear;
+    outline: none;
+}
+.matrix1row2:hover{
+    background-color: #353d59;
+    transition: background-color .5s linear;
+    outline: none;
+}
+.matrix1row3s:hover{
+    background-color: #353d59;
+    transition: background-color .5s linear;
+    outline: none;
+}
+
+.matrix2row1{
+    background-color: #2a3047;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.matrix2row2{
+    background-color: #2a3047;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.matrix2row3{
+    background-color: #2a3047;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+}
+.matrix2row1:hover{
+    background-color: #353d59;
+    transition: background-color .5s linear;
+    outline: none;
+}
+.matrix2row2:hover{
+    background-color: #353d59;
+    transition: background-color .5s linear;
+    outline: none;
+}
+.matrix2row3s:hover{
+    background-color: #353d59;
+    transition: background-color .5s linear;
+    outline: none;
+}
+
+input[type=text]{
+    outline: none;
+}
+
+.outputwindow{
+    display: grid;
+    position: absolute;
+    left: 55%;
+
+    width: 50%;
+    height: 100%;
+    
+    background-color: #373f5c;
+    border-color: transparent;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.outputtext{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 15%;
+    right: 5%;
+    background-color: #ffffff00;
+    border-color: transparent;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+
+    
+
+}
