@@ -1,36 +1,34 @@
 function Submit(classid) { 
-        console.log('hello world')
+    console.log('hello world')
     this.matrixA = [];
     this.matrixB = [];
     var result = [];
-    for(var i=0; i<3; i++) {
+    for(var i=0; i<2; i++) {
         this.matrixA[i] = [];
         this.matrixB[i] = [];
     }
-    this.AxDimension = 3;
-    this.AyDimension = 3;
-    this.BxDimension = 3;
-    this.ByDimension = 3;
+    this.AxDimension = 2;
+    this.AyDimension = 2;
+    this.BxDimension = 2;
+    this.ByDimension = 2;
     
     var row1 = document.getElementsByClassName("matrix1row1");
     var row2 = document.getElementsByClassName("matrix1row2");
     var row3 = document.getElementsByClassName("matrix1row3");
-    for (var i=0; i<3; i++) {
+    for (var i=0; i<2; i++) {
         this.matrixA[0][i] = row1[i].value;
         this.matrixA[1][i] = row2[i].value;
-        this.matrixA[2][i] = row3[i].value;
     }
     row1 = document.getElementsByClassName("matrix2row1");
     row2 = document.getElementsByClassName("matrix2row2");
     row3 = document.getElementsByClassName("matrix2row3");
-    for (var i=0; i<3; i++) {
+    for (var i=0; i<2; i++) {
         this.matrixB[0][i] = row1[i].value;
         this.matrixB[1][i] = row2[i].value;
-        this.matrixB[2][i] = row3[i].value;
     }
         if (classid=='add') {
             var result = [];
-            for(var i=0; i<3; i++) 
+            for(var i=0; i<2; i++) 
                 result[i]=[];
             for (i =0; i<this.AyDimension; i++) {
                 for (var j=0; j<this.AxDimension; j++) {
@@ -47,7 +45,7 @@ function Submit(classid) {
             document.getElementById("outputtext").value = string;
         } else if(classid=='sub') {
             var result = [];
-            for(var i=0; i<3; i++) 
+            for(var i=0; i<2; i++) 
                 result[i]=[];
             for (i =0; i<this.AyDimension; i++) {
                 for (var j=0; j<this.AxDimension; j++) {
@@ -64,7 +62,7 @@ function Submit(classid) {
             document.getElementById("outputtext").value = string;
         } else if(classid=='multiply') {
             var result = [];
-            for(var i=0; i<3; i++) 
+            for(var i=0; i<2; i++) 
                 result[i]=[];
             i=0;
             var j=0;
@@ -73,7 +71,7 @@ function Submit(classid) {
             var columnsRes = this.BxDimension;
             for (i=0; i<rowsRes; i++) {
                 for (j=0; j<columnsRes; j++) {
-                    result[i][j] = this.matrixA[i][0]*this.matrixB[0][j]+this.matrixA[i][1]*this.matrixB[1][j]+this.matrixA[i][2]*this.matrixB[2][j];
+                    result[i][j] = this.matrixA[i][0]*this.matrixB[0][j]+this.matrixA[i][1]*this.matrixB[1][j];
                     result[i][j] = Math.round(result[i][j]*100)/100;
                 }
             }
@@ -86,16 +84,7 @@ function Submit(classid) {
             }
             document.getElementById("outputtext").value = string;
         } else if(classid=='determinent') {
-            var determinant;
-            var op1, op2, op3, r1, r2, r3;
-            op1 = this.matrixA[0][0]*this.matrixA[1][1]*this.matrixA[2][2];
-            op2 = this.matrixA[0][1]*this.matrixA[1][2]*this.matrixA[2][0];
-            op3 = this.matrixA[0][2]*this.matrixA[1][0]*this.matrixA[2][1];
-            r1 = this.matrixA[0][2]*this.matrixA[1][1]*this.matrixA[2][0];
-            r2 = this.matrixA[0][0]*this.matrixA[1][2]*this.matrixA[2][1];
-            r3 = this.matrixA[0][1]*this.matrixA[1][0]*this.matrixA[2][2];
-            determinant = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
-            this.determinantA = determinant;
+            determinant = (this.matrixA[0][0]*this.matrixA[1][1])-(this.matrixA[0][1]*this.matrixA[1][0]);
             document.getElementById("outputtext").value = +determinant;
         } else if(classid=='transpose') {
             var string = "\r";
@@ -107,9 +96,9 @@ function Submit(classid) {
             }
             document.getElementById("outputtext").value = string;
         } else if(classid=='rank') {
-            var rank = 3;
-            var R=3;
-            var row =  3;
+            var rank = 2;
+            var R=2;
+            var row =  2;
             var mat = this.matrixA;
             for (row = 0; row < rank; row++)
             {
@@ -149,9 +138,9 @@ function Submit(classid) {
             document.getElementById("outputtext").value = 'Rank: '+rank;
             return rank;
         } else if(classid=='nullity') {
-            var rank = 3;
-            var R=3;
-            var row =  3;
+            var rank = 2;
+            var R=2;
+            var row =  2;
             var mat = this.matrixA;
             for (row = 0; row < rank; row++)
             {
@@ -188,18 +177,10 @@ function Submit(classid) {
                     row--;
                 }
             }
-            var nullity = 3-rank
+            var nullity = 2-rank
             document.getElementById("outputtext").value = 'Nullity: '+nullity;
         } else if(classid=='inverse') {
-            var determinant;
-            var op1, op2, op3, r1, r2, r3;
-            op1 = this.matrixA[0][0]*this.matrixA[1][1]*this.matrixA[2][2];
-            op2 = this.matrixA[0][1]*this.matrixA[1][2]*this.matrixA[2][0];
-            op3 = this.matrixA[0][2]*this.matrixA[1][0]*this.matrixA[2][1];
-            r1 = this.matrixA[0][2]*this.matrixA[1][1]*this.matrixA[2][0];
-            r2 = this.matrixA[0][0]*this.matrixA[1][2]*this.matrixA[2][1];
-            r3 = this.matrixA[0][1]*this.matrixA[1][0]*this.matrixA[2][2];
-            determinant = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
+            determinant = (this.matrixA[0][0]*this.matrixA[1][1])-(this.matrixA[0][1]*this.matrixA[1][0]);
             this.determinantA = determinant;
         if (this.determinantA==null){
             document.getElementById("outputtext").value = 'Dumb Me'
@@ -211,7 +192,7 @@ function Submit(classid) {
 		var adjacent = [];
 		var result = [];
 		var aux = [];
-		for(var i=0; i<3; i++) {
+		for(var i=0; i<2; i++) {
 			adjacent[i] = [];
 			result[i] = [];
 			aux[i]=[];
@@ -269,13 +250,8 @@ function Submit(classid) {
     } else if(classid=='identity') {
         this.matrixA[0][0] = '1';
         this.matrixA[0][1] = '0';
-        this.matrixA[0][2] = '0';
         this.matrixA[1][0] = '0';
         this.matrixA[1][1] = '1';
-        this.matrixA[1][2] = '0';
-        this.matrixA[2][0] = '0';
-        this.matrixA[2][1] = '0';
-        this.matrixA[2][2] = '1';
         result = this.matrixA
         var string = "\r";
 		for (i =0; i<this.AyDimension; i++) {
