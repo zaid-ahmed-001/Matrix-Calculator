@@ -13,6 +13,9 @@
     <body>
         <div class="main">
             <div class="frame">
+                <div class="outputwindow">
+                    <textarea wrap="soft" rows="100" cols="20" id="outputtext" class="outputtext" disabled></textarea>
+                </div>
                 <div class="frameleftsideorder2">
                     <input class="matrix1row1" type="text" value="0" id="matrix1row1"/>
                     <input class="matrix1row1" type="text" value="0" id="matrix1row1"/>
@@ -26,12 +29,9 @@
                     <input class="matrix2row1" type="text" value="0" id="matrix2row1"/>
                     <input class="matrix2row2" type="text" value="0" id="matrix2row2"/>
                     <input class="matrix2row2" type="text" value="0" id="matrix2row2"/>
-                    <div class="outputwindow">
-                        <textarea wrap="soft" rows="100" cols="20" id="outputtext" class="outputtext" disabled></textarea>
-                    </div>
                 </div>
                 <div class="framerightside">
-                    <button onclick="Submit('sui')" class="button color3">=</button>
+                    <a href="order2.html"><button class="button color3">↺</button></a>
                     <button onclick="Submit('add')" class="button color2">+</button>
                     <button onclick="Submit('sub')" class="button color1">-</button>
                     <button onclick="Submit('multiply')" class="button color2">x</button>
@@ -42,13 +42,13 @@
                     <button onclick="Submit('nullity')" class="button color2">n(A)</button>
 
                     <button onclick="Submit('inverse')" class="button color1">A<sup>-1</sup></button>
-                    <button onclick="Submit('uppertriangluar')" class="button color2">AA</button>
+                    <input type="number" id="pow" onclick="Submit('power')" class="button color2" value="1">
                     <button onclick="Submit('identity')" class="button color1">I<sub>n</sub></button>
                     <button onclick="Submit('random')" class="button color2">⒳</button>
                 </div>
                 <div class="slideshow">
-                    <a href="order2.html"><button class="button color2">Order<br>2x2</button></a>
-                    <a href="index.html"><button class="button color2">Order<br>3x3</button></a>
+                    <a href="order2.html"><button class="button color4">Order<br>2x2</button></a>
+                    <a href="index.html"><button class="button color4">Order<br>3x3</button></a>
                 </div>
             </div>
         </div>

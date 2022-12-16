@@ -96,7 +96,7 @@ function Submit(classid) {
             r3 = this.matrixA[0][1]*this.matrixA[1][0]*this.matrixA[2][2];
             determinant = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
             this.determinantA = determinant;
-            document.getElementById("outputtext").value = +determinant;
+            document.getElementById("outputtext").value = 'Determinant: '+determinant;
         } else if(classid=='transpose') {
             var string = "\r";
             for (var i =0; i<this.AxDimension; i++) {

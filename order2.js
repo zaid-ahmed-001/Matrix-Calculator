@@ -85,7 +85,7 @@ function Submit(classid) {
             document.getElementById("outputtext").value = string;
         } else if(classid=='determinent') {
             determinant = (this.matrixA[0][0]*this.matrixA[1][1])-(this.matrixA[0][1]*this.matrixA[1][0]);
-            document.getElementById("outputtext").value = +determinant;
+            document.getElementById("outputtext").value = 'Determinant: '+determinant;
         } else if(classid=='transpose') {
             var string = "\r";
             for (var i =0; i<this.AxDimension; i++) {
@@ -265,6 +265,22 @@ function Submit(classid) {
         for (let i = 0; i<this.AxDimension; i++) {
             for (let j = 0; j<this.AxDimension; j++) {
                 this.matrixA[i][j] = Math.floor((Math.random() * 10) + 1);
+            }
+        }
+        result = this.matrixA
+        var string = "\r";
+		for (i =0; i<this.AyDimension; i++) {
+			for (var j=0; j<this.AxDimension; j++) {
+				string=string+"\t"+result[i][j];
+			}
+			string=string+"\r";
+		}
+        document.getElementById("outputtext").value = string
+    } else if(classid=='power') {
+        pow = document.getElementById("pow").value
+        for (i = 0; i<this.AyDimension; i++) {
+            for (let j = 0; j<this.AxDimension; j++) {
+                this.matrixA[i][j] = this.matrixA[i][j]**pow
             }
         }
         result = this.matrixA
