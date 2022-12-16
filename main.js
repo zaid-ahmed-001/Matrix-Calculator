@@ -300,6 +300,22 @@ function Submit(classid) {
 			string=string+"\r";
 		}
         document.getElementById("outputtext").value = string
+    } else if(classid=='power') {
+        pow = document.getElementById("pow").value
+        for (i = 0; i<this.AyDimension; i++) {
+            for (let j = 0; j<this.AxDimension; j++) {
+                this.matrixA[i][j] = this.matrixA[i][j]**pow
+            }
+        }
+        result = this.matrixA
+        var string = "\r";
+		for (i =0; i<this.AyDimension; i++) {
+			for (var j=0; j<this.AxDimension; j++) {
+				string=string+"\t"+result[i][j];
+			}
+			string=string+"\r";
+		}
+        document.getElementById("outputtext").value = string
     }
 }
 
