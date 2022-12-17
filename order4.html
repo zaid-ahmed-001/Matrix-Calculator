@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="jquery-3.6.1.min.js" type="text/javascript"></script> 
-        <script src="main.js" defer></script> 
+        <script src="order4.js" defer></script> 
         <link type="text/css" rel="stylesheet" href="style.css">
         <title>Matrix Calculator by Fubuki</title>
     </head>
@@ -16,17 +16,28 @@
                 <div class="outputwindow">
                     <textarea wrap="soft" rows="100" cols="20" id="outputtext" class="outputtext" disabled></textarea>
                 </div>
-                <div class="frameleftside">
+                <div class="frameleftsideorder4">
                     <input class="matrix1row1" type="text" value="0"/>
                     <input class="matrix1row1" type="text" value="0"/>
                     <input class="matrix1row1" type="text" value="0"/>
+                    <input class="matrix1row1" type="text" value="0"/>
+
                     <input class="matrix1row2" type="text" value="0"/>
                     <input class="matrix1row2" type="text" value="0"/>
                     <input class="matrix1row2" type="text" value="0"/>
+                    <input class="matrix1row2" type="text" value="0"/>
+
+                    <input class="matrix1row3" type="text" value="0"/>
                     <input class="matrix1row3" type="text" value="0"/>
                     <input class="matrix1row3" type="text" value="0"/>
                     <input class="matrix1row3" type="text" value="0"/>
 
+                    <input class="matrix1row4" type="text" value="0"/>
+                    <input class="matrix1row4" type="text" value="0"/>
+                    <input class="matrix1row4" type="text" value="0"/>
+                    <input class="matrix1row4" type="text" value="0"/>
+
+                    <div class="gap" type="text" value="0"/></div>
                     <div class="gap" type="text" value="0"/></div>
                     <div class="gap" type="text" value="0"/></div>
                     <div class="gap" type="text" value="0"/></div>
@@ -34,12 +45,22 @@
                     <input class="matrix2row1" type="text" value="0" id="matrix2row1"/>
                     <input class="matrix2row1" type="text" value="0" id="matrix2row1"/>
                     <input class="matrix2row1" type="text" value="0" id="matrix2row1"/>
+                    <input class="matrix2row1" type="text" value="0" id="matrix2row1"/>
+
                     <input class="matrix2row2" type="text" value="0" id="matrix2row2"/>
                     <input class="matrix2row2" type="text" value="0" id="matrix2row2"/>
                     <input class="matrix2row2" type="text" value="0" id="matrix2row2"/>
+                    <input class="matrix2row2" type="text" value="0" id="matrix2row2"/>
+
                     <input class="matrix2row3" type="text" value="0" id="matrix2row3"/>
                     <input class="matrix2row3" type="text" value="0" id="matrix2row3"/>
                     <input class="matrix2row3" type="text" value="0" id="matrix2row3"/>
+                    <input class="matrix2row3" type="text" value="0" id="matrix2row3"/>
+
+                    <input class="matrix2row4" type="text" value="0" id="matrix2row4"/>
+                    <input class="matrix2row4" type="text" value="0" id="matrix2row4"/>
+                    <input class="matrix2row4" type="text" value="0" id="matrix2row4"/>
+                    <input class="matrix2row4" type="text" value="0" id="matrix2row4"/>
                 </div>
                 <div class="framerightside">
                     <a href="index.html"><button class="button color3">↺</button></a>
@@ -52,10 +73,10 @@
                     <button onclick="Submit('rank')" class="button color1">ρ(A)</button>
                     <button onclick="Submit('nullity')" class="button color2">n(A)</button>
 
-                    <button onclick="Submit('inverse')" class="button color1">A<sup>-1</sup></button>
-                    <input type="number" id="pow" onclick="Submit('power')" class="button color2" value="1">
-                    <button onclick="Submit('identity')" class="button color1">I<sub>n</sub></button>
-                    <button onclick="Submit('random')" class="button color2">⒳</button>
+                    <!-- <button onclick="Submit('inverse')" class="button color1">A<sup>-1</sup></button> -->
+                    <input type="number" id="pow" onclick="Submit('power')" class="button color1" value="1">
+                    <button onclick="Submit('identity')" class="button color2">I<sub>n</sub></button>
+                    <button onclick="Submit('random')" class="button color1">⒳</button>
                 </div>
                 <div class="slideshow">
                     <a href="order2.html"><button class="button color4">Order<br>2x2</button></a>
