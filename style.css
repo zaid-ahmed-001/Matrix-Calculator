@@ -5,6 +5,18 @@ body{
     background-color: #2a2b2c;
 }
 
+
+@media only screen and (max-width: 600px) {
+    body {
+        position: relative;
+        transform: scale(0.33);
+        rotate: 90deg;
+        top: 330px;
+        left: 105px;
+    }
+}
+
+
 .frame{
     background-color: #212832;
     height: 900px;
