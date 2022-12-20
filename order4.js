@@ -132,7 +132,9 @@ for (var i=0; i<4; i++) {
             {
                 det = det * mat[i][i];
             }
-        this.determinantA = (det / total);
+            determinant = (det / total)
+            if (determinant < 0) {this.determinantA = (determinant*-1);}
+            else {this.determinantA = (determinant);}
         document.getElementById("outputtext").value = 'Determinant: '+this.determinantA;
     } else if(classid=='transpose') {
         var string = "\r";

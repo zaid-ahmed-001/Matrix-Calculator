@@ -85,7 +85,9 @@ function Submit(classid) {
             document.getElementById("outputtext").value = string;
         } else if(classid=='determinent') {
             determinant = (this.matrixA[0][0]*this.matrixA[1][1])-(this.matrixA[0][1]*this.matrixA[1][0]);
-            document.getElementById("outputtext").value = 'Determinant: '+determinant;
+            if (determinant < 0) {this.determinantA = (determinant*-1);}
+            else {this.determinantA = (determinant);}
+            document.getElementById("outputtext").value = 'Determinant: '+this.determinantA;
         } else if(classid=='transpose') {
             var string = "\r";
             for (var i =0; i<this.AxDimension; i++) {
@@ -181,12 +183,13 @@ function Submit(classid) {
             document.getElementById("outputtext").value = 'Nullity: '+nullity;
         } else if(classid=='inverse') {
             determinant = (this.matrixA[0][0]*this.matrixA[1][1])-(this.matrixA[0][1]*this.matrixA[1][0]);
-            this.determinantA = determinant;
+            if (determinant < 0) {this.determinantA = (determinant*-1);}
+            else {this.determinantA = (determinant);}
         if (this.determinantA==null){
-            document.getElementById("outputtext").value = 'Dumb Me'
+            document.getElementById("outputtext").value = 'Fubuki Dummy cant even pass a variable'
 			return;}
 		if(this.determinantA==0) {
-            document.getElementById("outputtext").value = '0 |A|'
+            document.getElementById("outputtext").value = 'Not Defined'
 			return;
 		}
 		var adjacent = [];
