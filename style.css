@@ -266,7 +266,7 @@ input[type=number]{
     position: absolute;
     top: 46%;
     left: 40.5%;
-    grid-template-columns: 52% 52%;
+    grid-template-columns: 50%;
 }
 
 .frameleftsideorder2{

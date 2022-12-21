@@ -318,12 +318,99 @@ function Submit(classid) {
 			string=string+"\r";
 		}
         document.getElementById("outputtext").value = string
+    } else if(classid=='divide') {
+        var determinantB;
+        var op1, op2, op3, r1, r2, r3;
+        op1 = this.matrixB[0][0]*this.matrixB[1][1]*this.matrixB[2][2];
+        op2 = this.matrixB[0][1]*this.matrixB[1][2]*this.matrixB[2][0];
+        op3 = this.matrixB[0][2]*this.matrixB[1][0]*this.matrixB[2][1];
+        r1 = this.matrixB[0][2]*this.matrixB[1][1]*this.matrixB[2][0];
+        r2 = this.matrixB[0][0]*this.matrixB[1][2]*this.matrixB[2][1];
+        r3 = this.matrixB[0][1]*this.matrixB[1][0]*this.matrixB[2][2];
+        determinantB = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
+        if (determinantB < 0) {this.determinantB = (determinantB*-1);}
+        else {this.determinantB = (determinantB);}
+    if (this.determinantB==null){
+        document.getElementById("outputtext").value = 'Fubuki Dummy cant even pass a variable'
+        return;}
+    if(this.determinantB==0) {
+        document.getElementById("outputtext").value = 'Not Defined'
+        return;
+    }
+    var adjacent = [];
+    var result = [];
+    var aux = [];
+    for(var i=0; i<3; i++) {
+        adjacent[i] = [];
+        result[i] = [];
+        aux[i]=[];
+    }
+    for (i =0; i<this.AyDimension; i++) {
+        for (var j=0; j<this.AxDimension; j++) {
+            if (this.AxDimension == 1)
+                adjacent[i][j] = 1+"/"+this.matrixB[i][j];
+            if (this.AxDimension==2) {
+                adjacent[j][i] = ((-1)**(i+1+j+1))*this.matrixB[i][j];
+            }
+            if (this.AxDimension==3) { 
+                var count1 = 0;
+                var count2 = 0;
+                for (var k=0; k<3; k++) {
+                    for (var l=0; l<3; l++) {
+                        if (l!=j && k!=i) {
+                            aux[count1][count2]=this.matrixB[k][l];
+                            count2++;
+                        }
+                    }
+                    count2 = 0;
+                    if (k!=i)
+                        count1++;
+                }
+                adjacent[i][j] = ((-1)**(i+1+j+1))*(aux[0][0]*aux[1][1]-aux[0][1]*aux[1][0]);
+            }
+        }
+    }
+    for (var i =0; i<this.AxDimension; i++) {
+        for (var j=0; j<this.AyDimension; j++) {
+            result[i][j]=adjacent[j][i];
+        }
+    }
+    if (this.AxDimension==2) {
+        var temp = result[0][0];
+        result[0][0] = result[1][1];
+        result[1][1] = temp;
+    }
+    if (this.AxDimension!=1) {
+        for (var i =0; i<this.AxDimension; i++) {
+            for (var j=0; j<this.AyDimension; j++) {
+                result[i][j]=Math.round(result[i][j]/this.determinantA*100)/100;
+            }
+        }
+    }
+    var result2 = [];
+    for(var i=0; i<3; i++) 
+        result2[i]=[];
+    i=0;
+    var j=0;
+    //x refers to columns, y refers to rows
+    var rowsRes = this.AyDimension;
+    var columnsRes = this.BxDimension;
+    for (i=0; i<rowsRes; i++) {
+        for (j=0; j<columnsRes; j++) {
+            result2[i][j] = this.matrixA[i][0]*this.matrixA[0][j]+this.matrixA[i][1]*result[1][j]+result[i][2]*result[2][j];
+            result2[i][j] = Math.round(result2[i][j]*100)/100;
+        }
+    }
+    var string = "\r";
+    for (i =0; i<this.AyDimension; i++) {
+        for (var j=0; j<this.AxDimension; j++) {
+            string=string+"\t"+result2[i][j];
+        }
+        string=string+"\r";
+    }
+    document.getElementById("outputtext").value = string
     }
 }
-
-
-
-
 
 function swap(mat, row1 , row2 , col)
 {
