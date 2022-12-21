@@ -1,37 +1,37 @@
 function Submit(classid) { 
-    console.log('hello world')
-this.matrixA = [];
-this.matrixB = [];
-var result = [];
-for(var i=0; i<4; i++) {
-    this.matrixA[i] = [];
-    this.matrixB[i] = [];
-}
-this.AxDimension = 4;
-this.AyDimension = 4;
-this.BxDimension = 4;
-this.ByDimension = 4;
+    console.log('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+    this.matrixA = [];
+    this.matrixB = [];
+    var result = [];
+    for(var i=0; i<4; i++) {
+        this.matrixA[i] = [];
+        this.matrixB[i] = [];
+    }
+    this.AxDimension = 4;
+    this.AyDimension = 4;
+    this.BxDimension = 4;
+    this.ByDimension = 4;
 
-var row1 = document.getElementsByClassName("matrix1row1");
-var row2 = document.getElementsByClassName("matrix1row2");
-var row3 = document.getElementsByClassName("matrix1row3");
-var row4 = document.getElementsByClassName("matrix1row4");
-for (var i=0; i<4; i++) {
-    this.matrixA[0][i] = row1[i].value;
-    this.matrixA[1][i] = row2[i].value;
-    this.matrixA[2][i] = row3[i].value;
-    this.matrixA[3][i] = row4[i].value;
-}
-row1 = document.getElementsByClassName("matrix2row1");
-row2 = document.getElementsByClassName("matrix2row2");
-row3 = document.getElementsByClassName("matrix2row3");
-row4 = document.getElementsByClassName("matrix2row4");
-for (var i=0; i<4; i++) {
-    this.matrixB[0][i] = row1[i].value;
-    this.matrixB[1][i] = row2[i].value;
-    this.matrixB[2][i] = row3[i].value;
-    this.matrixB[3][i] = row4[i].value;
-}
+    var row1 = document.getElementsByClassName("matrix1row1");
+    var row2 = document.getElementsByClassName("matrix1row2");
+    var row3 = document.getElementsByClassName("matrix1row3");
+    var row4 = document.getElementsByClassName("matrix1row4");
+    for (var i=0; i<4; i++) {
+        this.matrixA[0][i] = row1[i].value;
+        this.matrixA[1][i] = row2[i].value;
+        this.matrixA[2][i] = row3[i].value;
+        this.matrixA[3][i] = row4[i].value;
+    }
+    row1 = document.getElementsByClassName("matrix2row1");
+    row2 = document.getElementsByClassName("matrix2row2");
+    row3 = document.getElementsByClassName("matrix2row3");
+    row4 = document.getElementsByClassName("matrix2row4");
+    for (var i=0; i<4; i++) {
+        this.matrixB[0][i] = row1[i].value;
+        this.matrixB[1][i] = row2[i].value;
+        this.matrixB[2][i] = row3[i].value;
+        this.matrixB[3][i] = row4[i].value;
+    }
     if (classid=='add') {
         var result = [];
         for(var i=0; i<4; i++) 
